@@ -1,0 +1,293 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* -----------------------MAIN CODE-------------------------------------- */
+
+body {
+  font-weight: bold;
+}
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: 30px; */
+  padding: 40px;
+  background-color: whitesmoke;
+  box-shadow: 0px 3px ghostwhite;
+}
+#header-title {
+  font-size: 49px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+  padding: 40px;
+}
+#add-book {
+  font-size: 31px;
+  cursor: pointer;
+}
+#pop-up {
+  display: none;
+  justify-content: center;
+  /* position: relative; */
+}
+#pop-up-form {
+  /* transform: scale(0); */
+  display: flex;
+  justify-content: center;
+  transition: 0.5s ease;
+  padding: 1rem;
+  margin-top: 2rem;
+  box-shadow: 5px 5px 35px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 380px;
+  z-index: 10000;
+  background: #fff;
+}
+
+#pop-up-form input[type="text"],
+#pop-up-form input[type="number"],
+select {
+  display: block;
+  /* width: 100%; */
+  padding: 1rem;
+  border: 0;
+  background: #f7f7f7;
+  /* font-size: 1rem; */
+  outline: 1rem;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+#pop-up-form input[type="submit"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border: 0;
+  background: #f7f7f7;
+  font-size: 1rem;
+  outline: 0;
+  font-size: 1.4rem;
+  color: var(--white);
+}
+label {
+  font-size: 19px;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.bookshelf {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  max-width: 1000;
+  position: absolute;
+  /*top: 12%;*/
+  /*left: 15%;*/
+  margin: 2rem;
+}
+
+.book {
+  width:inherit;
+  height: inherit;
+  border-radius: 5px;
+  margin: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+.book:hover {
+  box-shadow: 3px 3px 30px 10px rgba(0, 0, 0, 0.15);
+}
+
+.book h2 {
+  background: var(--blue);
+  color: var(--white);
+  padding: 0.5rem 0;
+  margin: -0.5rem 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 31px;
+}
+
+.book h3 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 31px;
+}
+
+.book h3 {
+  margin: 1rem;
+  font-size: 31px;
+}
+
+.book .trash,
+.book .update {
+  outline: none;
+  border: none;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.book .update {
+  background: rgb(153 158 230);
+  position: relative;
+  /* top: 40px; */
+  /* width: 249px; */
+  border-radius: 50px;
+}
+
+.book .trash {
+  background-color: red;
+  margin-top: 10px;
+  border-radius: 54px;
+}
+
